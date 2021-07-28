@@ -8,8 +8,9 @@ plugins=(git gitfast last-working-dir common-aliases sublime zsh-syntax-highligh
 
 # (macOS-only) Prevent Homebrew from reporting - https://githcd ~/code/joseignacioolivos1/fullstack-challenges/
 export HOMEBREW_NO_ANALYTICS=1
-ZSH_DISABLE_COMPFIX=truecd ~/code/joseignacioolivos1/fullstack-challenges/
-git status
+ZSH_DISABLE_COMPFIX=true
+
+export GITHUB_USERNAME=`gh api user | jq -r '.login'`
 # Actually load Oh-My-Zsh
 source "${ZSH}/oh-my-zsh.sh"
 unalias rm # No interactive rm by default (brought by plugins/common-aliases)
